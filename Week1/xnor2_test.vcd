@@ -1,0 +1,36 @@
+$date
+	Mon Aug 12 15:18:53 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module xnor2_test $end
+$scope module xnor2_test $end
+$var wire 1 ! a $end
+$var wire 1 " b $end
+$var wire 1 # c $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+1#
+0"
+0!
+$end
+#100
+0#
+1"
+#200
+0"
+1!
+#300
+1#
+1"
+#400

@@ -1,0 +1,134 @@
+$date
+	Tue Aug 20 14:12:10 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module fulladder_test $end
+$var wire 1 ! S $end
+$var wire 1 " Cout $end
+$var reg 1 # A $end
+$var reg 1 $ B $end
+$var reg 1 % Cin $end
+$scope module M1 $end
+$var wire 1 # A $end
+$var wire 1 $ B $end
+$var wire 1 % Cin $end
+$var wire 5 & t [4:0] $end
+$var wire 1 ! S $end
+$var wire 1 " Cout $end
+$scope module G1 $end
+$var wire 1 # i0 $end
+$var wire 1 $ i1 $end
+$var wire 1 ' o6 $end
+$upscope $end
+$scope module G2 $end
+$var wire 1 ( i0 $end
+$var wire 1 % i1 $end
+$var wire 1 ! o2 $end
+$upscope $end
+$scope module G3 $end
+$var wire 1 # i0 $end
+$var wire 1 $ i1 $end
+$var wire 1 ) o2 $end
+$upscope $end
+$scope module G4 $end
+$var wire 1 # i0 $end
+$var wire 1 % i1 $end
+$var wire 1 * o2 $end
+$upscope $end
+$scope module G5 $end
+$var wire 1 $ i0 $end
+$var wire 1 % i1 $end
+$var wire 1 + o2 $end
+$upscope $end
+$scope module G6 $end
+$var wire 1 , i0 $end
+$var wire 1 - i1 $end
+$var wire 1 . o3 $end
+$upscope $end
+$scope module G7 $end
+$var wire 1 / i0 $end
+$var wire 1 0 i1 $end
+$var wire 1 " o3 $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+00
+0/
+0.
+0-
+0,
+0+
+0*
+0)
+0(
+0'
+b0 &
+0%
+0$
+0#
+0"
+0!
+$end
+#20
+1%
+#40
+1(
+b1 &
+1'
+0%
+1$
+#60
+1"
+1/
+1!
+b1001 &
+1+
+1%
+#80
+0"
+0/
+0!
+b1 &
+0+
+0%
+0$
+1#
+#100
+1"
+10
+1.
+1-
+1!
+b10101 &
+1*
+1%
+#120
+0-
+0(
+1,
+0!
+0*
+0'
+b10010 &
+1)
+0%
+1$
+#140
+1-
+1/
+1*
+b11110 &
+1+
+1%
+#160

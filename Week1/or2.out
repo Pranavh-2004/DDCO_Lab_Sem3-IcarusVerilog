@@ -1,0 +1,64 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x150604940 .scope module, "or2_test" "or2_test" 2 1;
+ .timescale 0 0;
+v0x60000366c240_0 .var "a", 0 0;
+v0x60000366c2d0_0 .var "b", 0 0;
+v0x60000366c360_0 .net "c", 0 0, L_0x600002f6c1c0;  1 drivers
+S_0x150604ab0 .scope module, "or2_test" "or2" 2 5, 3 1 0, S_0x150604940;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "c";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+L_0x600002f6c1c0 .functor OR 1, v0x60000366c240_0, v0x60000366c2d0_0, C4<0>, C4<0>;
+v0x60000366c090_0 .net "a", 0 0, v0x60000366c240_0;  1 drivers
+v0x60000366c120_0 .net "b", 0 0, v0x60000366c2d0_0;  1 drivers
+v0x60000366c1b0_0 .net "c", 0 0, L_0x600002f6c1c0;  alias, 1 drivers
+    .scope S_0x150604940;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x60000366c240_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x60000366c2d0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x60000366c240_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x60000366c2d0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x60000366c240_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x60000366c2d0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x60000366c240_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x60000366c2d0_0, 0, 1;
+    %delay 100, 0;
+    %end;
+    .thread T_0;
+    .scope S_0x150604940;
+T_1 ;
+    %vpi_call 2 15 "$monitor", $time, " a=%b, b=%b, c=%b", v0x60000366c240_0, v0x60000366c2d0_0, v0x60000366c360_0 {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_0x150604940;
+T_2 ;
+    %vpi_call 2 19 "$dumpfile", "or2_test.vcd" {0 0 0};
+    %vpi_call 2 20 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x150604ab0 {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "or2_tb.v";
+    "or2.v";

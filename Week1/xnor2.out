@@ -1,0 +1,72 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x15ae06430 .scope module, "xnor2_test" "xnor2_test" 2 1;
+ .timescale 0 0;
+v0x600000c24750_0 .var "a", 0 0;
+v0x600000c247e0_0 .var "b", 0 0;
+v0x600000c24870_0 .net "c", 0 0, L_0x6000015249a0;  1 drivers
+S_0x15ae065a0 .scope module, "xnor2_test" "xnor2" 2 6, 3 1 0, S_0x15ae06430;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "c";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+L_0x6000015247e0 .functor AND 1, v0x600000c24750_0, v0x600000c247e0_0, C4<1>, C4<1>;
+L_0x600001524850 .functor NOT 1, v0x600000c24750_0, C4<0>, C4<0>, C4<0>;
+L_0x6000015248c0 .functor NOT 1, v0x600000c247e0_0, C4<0>, C4<0>, C4<0>;
+L_0x600001524930 .functor AND 1, L_0x600001524850, L_0x6000015248c0, C4<1>, C4<1>;
+L_0x6000015249a0 .functor OR 1, L_0x6000015247e0, L_0x600001524930, C4<0>, C4<0>;
+v0x600000c24360_0 .net *"_ivl_0", 0 0, L_0x6000015247e0;  1 drivers
+v0x600000c243f0_0 .net *"_ivl_2", 0 0, L_0x600001524850;  1 drivers
+v0x600000c24480_0 .net *"_ivl_4", 0 0, L_0x6000015248c0;  1 drivers
+v0x600000c24510_0 .net *"_ivl_6", 0 0, L_0x600001524930;  1 drivers
+v0x600000c245a0_0 .net "a", 0 0, v0x600000c24750_0;  1 drivers
+v0x600000c24630_0 .net "b", 0 0, v0x600000c247e0_0;  1 drivers
+v0x600000c246c0_0 .net "c", 0 0, L_0x6000015249a0;  alias, 1 drivers
+    .scope S_0x15ae06430;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x600000c24750_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x600000c247e0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x600000c24750_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x600000c247e0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x600000c24750_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x600000c247e0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x600000c24750_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x600000c247e0_0, 0, 1;
+    %delay 100, 0;
+    %end;
+    .thread T_0;
+    .scope S_0x15ae06430;
+T_1 ;
+    %vpi_call 2 18 "$monitor", $time, " a=%b, b=%b, c=%b", v0x600000c24750_0, v0x600000c247e0_0, v0x600000c24870_0 {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_0x15ae06430;
+T_2 ;
+    %vpi_call 2 23 "$dumpfile", "xnor2_test.vcd" {0 0 0};
+    %vpi_call 2 24 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x15ae065a0 {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "xnor2_tb.v";
+    "xnor2.v";
