@@ -1,4 +1,4 @@
-# UE22CS251A: Digital Design and Computer Organization Laboratory
+# UE23CS251A: Digital Design and Computer Organization Laboratory
 
 This repository contains Verilog code and detailed problem statements for the 8 weeks of laboratory exercises conducted during the third semester as part of the **Digital Design and Computer Organization (DDCO)** course.
 
